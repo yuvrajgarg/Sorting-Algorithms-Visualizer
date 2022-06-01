@@ -13,7 +13,6 @@ export function bubbleSort(a){
             if(h1 > h2){
                 color_update(bar[j],'red')
                 color_update(bar[j+1],'red')
-
                 var temp = a[j]
                 a[j] = a[j+1]
                 a[j+1] = temp
@@ -26,5 +25,5 @@ export function bubbleSort(a){
         }
         color_update(bar[n-1-i],'green')
     }
-    console.log(a);
+    // console.log(a);
 }
