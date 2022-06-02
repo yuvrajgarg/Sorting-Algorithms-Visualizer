@@ -1,6 +1,6 @@
 import './App.css';
 import {useState, useEffect} from 'react'
-import {mergeSort} from './MergeSort.js'
+import { mergeSort, mergeSort_simple } from './MergeSort.js'
 import { bubbleSort, bubbleSort_simple } from './BubbleSort.js';
 import { insertionSort, insertionSort_simple } from './InsertionSort.js';
 import { selectionSort, selectionSort_simple } from './SelectionSort.js'
@@ -8,7 +8,7 @@ import { quickSort , quickSort_simple } from './QuickSort'
 import { heapSort , heapSort_simple} from './HeapSort'
 
 var sum_delay = 0
-var delay = 0.1
+var delay = 1
 export function color_update(array__bar,new_color){
   setTimeout(() => {
       array__bar.style.backgroundColor = new_color;
@@ -22,7 +22,7 @@ export function height_update(array__bar,new_height){
 
 function App() {
   const [array,setArray] = useState([]); 
-  const LENGTH_OF_ARRAY = 105;
+  const LENGTH_OF_ARRAY = 114;
   useEffect(()=>{
     generateNewArray()
   },[])
@@ -36,10 +36,10 @@ function App() {
     }
     setArray(a);
     updateArrayBarsColor();
-    updateAlgoLogic("");
+    updateAlgoLogic("lorem ipsum");
   }
   function updateAlgoLogic(s){
-    document.getElementById("app__algo__logic").innerText = s;
+    document.getElementById("logic").innerText = s;
   }
   function updateArrayBarsColor(){
     const Bars = document.getElementsByClassName("app__array__container__bar")
@@ -58,7 +58,9 @@ function App() {
       let inbuiltSorted = a.slice().sort((a,b)=>a-b);
       // bubbleSort_simple(a);
       // selectionSort_simple(a);
-      insertionSort_simple(a);
+      // insertionSort_simple(a);
+      // quickSort_simple(a)
+      mergeSort_simple(a)
       let myAlgoSorted = a;
       let flag = false;
       for(let i = 0 ; i < LENGTH_OF_ARRAY ; i++){
@@ -107,10 +109,10 @@ function App() {
   //   updateAlgoLogic(s);
   }
   const QuickSortClick = () => {
-  //   sum_delay = 0
-  //   quickSort(array);
-  //   var s = "LOGIC: "
-  //   updateAlgoLogic(s);
+    sum_delay = 0
+    quickSort(array);
+    var s = "LOGIC: "
+    updateAlgoLogic(s);
   }
   return (
     <div className="app">
@@ -159,6 +161,7 @@ function App() {
           ))}
       </div>
       <div id="app__algo__logic">
+        <span id="logic"></span>
       </div>
     </div>
     

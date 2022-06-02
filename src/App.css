@@ -48,3 +48,32 @@
   padding : 20px;
   margin-bottom: 20px;
 }
+#app__algo__logic:hover{
+  cursor: pointer;
+  font-size: 25.2px;
+  color : aqua;
+  border: 2.1px solid white;
+  border-radius : 11px;
+  transition : ease-in 0.3s;
+}
+#logic:before{
+  color : #2ed763;
+  width:100%;
+  content: attr(app__algo__logic);
+  position: absolute;
+  top:0px;
+  left: 0px;
+  width: 0px;
+  border-right: 0.4rem solid #2ed763;
+  animation: animate 5s linear infinite;
+  -webkit-animation: slide 5s linear infinite;
+  overflow:hidden;
+}
+@keyframes animate {
+  0%, 10%, 100%{
+    width: 0%;
+  }
+  70%, 90%{
+    width: 100%;
+  }
+}
