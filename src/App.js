@@ -21,7 +21,7 @@ export function height_update(array__bar,new_height){
 }
 
 function App() {
-  const [array,setArray] = useState([]);
+  const [array,setArray] = useState([]); 
   const LENGTH_OF_ARRAY = 105;
   useEffect(()=>{
     generateNewArray()
@@ -68,30 +68,38 @@ function App() {
       if(!flag)console.log(true)
   }
   const BubbleSortClick = () => {
+    sum_delay = 0
     bubbleSort(array);
-    
+    console.log("bubble sort")
     logic_div.innerHTML = "The array will be divided into 2 parts, unsorted array and sorted array. Sorted array will be formed from right to left. Each time we will start from the left most point and compare 2 adjacent elements A(i) and A(i+1) for i = 0 to n-2 and swap them if A(i) > A(i+1). This way the largest element will reach the end and we will continue the process"
     console.log(logic_div.innerHTML)
   }
   const InsertionSortClick = () => {
+    sum_delay = 0
     insertionSort(array);
+    console.log("insertion sort")
     logic_div.innerHTML = "The array will be divided into 2 parts, unsorted array and sorted array. Sorted array will be formed from left to right. Each time we will pick the left most element from the unsorted array and insert it at it's correct position in the unsorted array on it's left. This way the element will be inserted at it's correct position and the whole array will be sorted like this"
   }
 
   const SelectionSortClick = () => {
+    sum_delay = 0
     selectionSort(array);
+    console.log("selection sort")
     logic_div.innerHTML = "The array will be divided into 2 parts, unsorted array and sorted array. Sorted array will be formed from left to right. Each time we will find the minimum element of the unsorted array and swap it with the first element of the unsorted array. This way the element will be inserted at it's correct position and the whole array will be sorted like this"
   }
 
   const MergeSortClick = () => {
+    sum_delay = 0
     mergeSort(array);
     logic_div.innerHTML = "The array will be divided into 2 parts, unsorted array and sorted array. Sorted array will be formed from left to right. Each time we will find the minimum element of the unsorted array and swap it with the first element of the unsorted array. This way the element will be inserted at it's correct position and the whole array will be sorted like this"
   }
   const HeapSortClick = () => {
+    sum_delay = 0
     heapSort(array);
     logic_div.innerHTML = "The array will be divided into 2 parts, unsorted array and sorted array. Sorted array will be formed from left to right. Each time we will find the minimum element of the unsorted array and swap it with the first element of the unsorted array. This way the element will be inserted at it's correct position and the whole array will be sorted like this"
   }
   const QuickSortClick = () => {
+    sum_delay = 0
     quickSort(array);
     logic_div.innerHTML = ""
   }
