@@ -8,7 +8,7 @@ export function quickSort(a){
 }
 function sortAndPartition(a, low, high){
     if(low>=high){
-        if(low==high){
+        if(low===high){
             color_update(bar[low],'green')
         }
         return;

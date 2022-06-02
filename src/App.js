@@ -8,8 +8,8 @@ import { quickSort , quickSort_simple } from './QuickSort'
 import { heapSort , heapSort_simple} from './HeapSort'
 
 var sum_delay = 0
-var delay = 1000
-const LENGTH_OF_ARRAY = 125;
+var delay = 0.5
+const LENGTH_OF_ARRAY = 102;
 export function color_update(array__bar,new_color){
   setTimeout(() => {
       array__bar.style.backgroundColor = new_color;
@@ -60,11 +60,12 @@ function App() {
       // selectionSort_simple(a);
       // insertionSort_simple(a);
       // quickSort_simple(a)
-      mergeSort_simple(a)
+      // mergeSort_simple(a)
+      heapSort_simple(a);
       let myAlgoSorted = a;
       let flag = false;
       for(let i = 0 ; i < LENGTH_OF_ARRAY ; i++){
-        if(inbuiltSorted[i]!==myAlgoSorted[i]){
+        if(inbuiltSorted[i]!=myAlgoSorted[i]){
           console.log(false);
           flag=true;
           break;
@@ -103,10 +104,10 @@ function App() {
     updateAlgoLogic(s);
   }
   const HeapSortClick = () => {
-  //   sum_delay = 0
-  //   heapSort(array);
-  //   var s = "LOGIC: The array will be divided into 2 parts, unsorted array and sorted array. Sorted array will be formed from left to right. Each time we will find the minimum element of the unsorted array and swap it with the first element of the unsorted array. This way the element will be inserted at it's correct position and the whole array will be sorted like this"
-  //   updateAlgoLogic(s);
+    sum_delay = 0
+    heapSort(array);
+    var s = "LOGIC: More can be read here (<a href = 'https://en.wikipedia.org/wiki/Heapsort'> HEAP SORT </a>)."
+    updateAlgoLogic(s);
   }
   const QuickSortClick = () => {
     sum_delay = 0

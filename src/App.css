@@ -54,7 +54,7 @@
   color : aqua;
   border: 2.1px solid white;
   border-radius : 11px;
-  transition : ease-in 0.3s;
+  transition : ease-in 1s;
 }
 #logic:before{
   color : #2ed763;
