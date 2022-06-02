@@ -14,7 +14,7 @@ function sortAndPartition(a, low, high){
         return;
     }
     let pivot = a[low], pivot_idx = low
-    color_update(bar[pivot_idx],'yellow')
+    color_update(bar[pivot_idx],'blue')
     let i = low;
     let j = high;
     while(i<j){

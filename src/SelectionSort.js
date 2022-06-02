@@ -4,13 +4,15 @@ const bar = document.getElementsByClassName("app__array__container__bar")
 export function selectionSort(a){
     var n = a.length
     for(let i = 0 ; i < n ; i++){
-        var mini = 1e10, min_idx = -1
+        var mini = 1e10, min_idx = i
 
         for(let j = i ; j < n ; j++){
             if(mini > a[j]){
+                color_update(bar[min_idx],'aqua')
                 mini = a[j];
                 min_idx = j;
                 color_update(bar[min_idx],'yellow') //bar[i] is the div , a[i] is the height of that particular bar
+                
             }
         }
         color_update(bar[i],'red')

@@ -23,6 +23,7 @@ export function insertionSort(a){
 
             i-=1;
         }
+        color_update(bar[j],'aqua')
     }
     for(let i = 0 ; i <n ; i++){
         color_update(bar[i],'green')
