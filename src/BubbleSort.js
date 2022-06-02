@@ -1,6 +1,6 @@
 import {color_update, height_update} from './App.js';
 
-const bar = document.getElementsByClassName("array__bar")
+const bar = document.getElementsByClassName("app__array__container__bar")
 export function bubbleSort(a){
     var n = a.length
     for(let i = 0 ; i < n ; i++){
@@ -26,4 +26,21 @@ export function bubbleSort(a){
         color_update(bar[n-1-i],'green')
     }
     // console.log(a);
+}
+export function bubbleSort_simple(a){
+    var n = a.length
+    for(let i = 0 ; i < n ; i++){
+        for(let j = 0 ; j < n-i-1 ; j++){
+            
+            var h1 = a[j]
+            var h2 = a[j+1]
+            if(h1 > h2){
+                var temp = a[j]
+                a[j] = a[j+1]
+                a[j+1] = temp
+
+            }
+        }
+    }
+    return a;
 }
