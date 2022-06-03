@@ -3,17 +3,58 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  height: 100vh;
+  width: 100%;
 }
 .app__header {
-  padding: 20px 0px;
+  padding: 10px 0px;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
   background-color: #2e8d8b;
 }
+.app__header__heading{
+  margin-left: 20px;
+  font-size:30px;
+  font-weight:800;
+  flex:0.;
+}
+.app__header__all__buttons{
+  display:flex;
+  place-items: center;
+  /* flex-direction: row ; */
+}
+.app__header__create__button{
+  flex:0.4
+}
+.app__header__sorting__button{
+  flex:0.6
+}
+.app__header__generate__button{
+  background-color: #00ff51;
+  text-transform: uppercase;
+  margin: 0 20px;
+  flex:0.4;
+  color: blackwhite;
+  border: 2px solid white;
+  border-radius: 10px;
+  font-weight:700;
+  font-size: 15px;
+  padding: 5px;
+  cursor: pointer;
+}
+.app__header__generate_button:hover{
+  color: white;
+  background-color : black;
+  border: 2px solid rgb(0, 26, 255);
+  transition: ease-in 0.2s;
+}
 .app__header__button {
+  margin-right:-10px;
+  text-transform: uppercase;
   background-color: aqua;
-  margin: 0 10px;
+  margin: 0px 10px;
+  margin-bottom: 5px;
   color: black;
   border: 2px solid black;
   border-radius: 20px;
@@ -22,10 +63,11 @@
   cursor: pointer;
 }
 .app__header__button:hover {
-  transition: ease-in 0.2s;
+  transition: ease-in 0.4s;
   background-color: white;
-  border: 2px solid red;
+  border: 2.5px solid red;
   color: black;
+  font-weight:700;
 }
 .app__array__container {
   margin-top:50px;
@@ -35,10 +77,10 @@
 }
 .app__array__container__bar {
   margin: 0 3px;
-  width: 10px;
+  width: 11px;
   display: inline-block;
   background-color: aqua;
-  border: 1px solid white;
+  border: 2px solid rgb(255, 255, 255);
 }
 #app__algo__logic{
   font-size: 15px;
@@ -46,6 +88,7 @@
   border: 2px solid aqua;
   border-radius : 10px;
   padding : 15px;
+  margin:0px 50px;
   margin-bottom: 20px;
   font-family: "Lucida Console", "Courier New", monospace;
   line-height: 20px;
@@ -98,27 +141,19 @@
   text-decoration: underline !important;
   font-weight: 800 !important ;
 }
-.hyperlink{
+a{
   /* font-size: 20px; */
   margin-top:12px !important;
   background-color:rgb(127, 104, 195)!important;
   border: 0.1px solid aqua;
   border-radius : 4px;
   color: white !important;
-  padding: 2px;
+  padding: 0px 2px;
   text-decoration: none ;
 }
-.hyperlink:hover{
+a:hover{
   background-color: black !important;
   color: rgb(6, 222, 255)!important;
   color:white !important;
   transition: ease-in 0.3s;
-}
-.app__footer{
-  width:100%;
-  background-color:#2e8d8b;
-  color:white;
-  display:grid;
-  place-items: center;
-  padding:10px;
 }

@@ -118,38 +118,47 @@ function App() {
   return (
     <div className="app">
       <div className = "app__header">
-          <button 
-              className="app__header__button"
-              onClick = {generateNewArray}
-          >Generate new array!</button>
-          <button 
-            className="app__header__button"
-            onClick = {MergeSortClick}
-          >Merge Sort</button>
-          <button 
-            className="app__header__button"
-            onClick = {BubbleSortClick }
-          >Bubble Sort</button>
-          <button 
-            className="app__header__button"
-            onClick = {InsertionSortClick}
-          >Insertion Sort</button>
-          <button 
-            className="app__header__button"
-            onClick = {SelectionSortClick}
-          >Selection Sort</button>
-          <button
-          className='app__header__button'
-          onClick = {QuickSortClick}
-          >Quick Sort</button>
-          <button
-            className = "app__header__button"
-            onClick = {HeapSortClick}
-          >Heap Sort</button>
-          <button 
-            className="app__header__button"
-            onClick = {testSortingAlgo}
-          >Test Algo</button>
+          <div 
+              className = 'app__header__heading'>SORTING ALGORITHMS VISUALIZER
+          </div>
+          <div className = 'app__header__all__buttons'>
+            <div className='app__header__create__button'>
+              <button 
+                className="app__header__generate__button"
+                onClick = {generateNewArray}
+                >Create a new array!</button>
+            </div>
+            <div className="app__header__sorting__button">
+                  <button 
+                    className="app__header__button"
+                    onClick = {MergeSortClick}
+                  >Merge Sort</button>
+                  <button 
+                    className="app__header__button"
+                    onClick = {BubbleSortClick }
+                  >Bubble Sort</button>
+                  <button 
+                    className="app__header__button"
+                    onClick = {InsertionSortClick}
+                  >Insertion Sort</button>
+                  <button 
+                    className="app__header__button"
+                    onClick = {SelectionSortClick}
+                  >Selection Sort</button>
+                  <button
+                  className='app__header__button'
+                  onClick = {QuickSortClick}
+                  >Quick Sort</button>
+                  <button
+                    className = "app__header__button"
+                    onClick = {HeapSortClick}
+                  >Heap Sort</button>
+                  {/* <button 
+                    className="app__header__button"
+                    onClick = {testSortingAlgo}
+                  >Test Algo</button> */}
+                </div>
+          </div>
       </div>
       <div className="app__array__container">
           {array.map((val,idx)=>(
@@ -164,9 +173,8 @@ function App() {
       <div id="app__algo__logic">
         <span id="logic"></span>
       </div>
-      <div className="app__footer">
-        <Footer/>
-      </div>
+      
+      <Footer/>
     </div>
     
   );
