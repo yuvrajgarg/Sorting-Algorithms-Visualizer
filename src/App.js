@@ -9,8 +9,22 @@ import { heapSort , heapSort_simple} from './HeapSort'
 import Footer from './Footer.js';
 
 var sum_delay = 0
-var delay = 0.1
-const LENGTH_OF_ARRAY = 69;
+var delay = 2.5
+// length
+// 1-10
+// 2-20
+// 3-40
+// 4-60
+// 5-80
+// 6-100
+// speed
+// 1- 500
+// 2- 200
+// 3- 50
+// 4- 10
+// 5- 2.5
+// 6- 1
+const LENGTH_OF_ARRAY = 100;
 export function color_update(array__bar,new_color){
   // console.log(array__bar)
   setTimeout(() => {
@@ -34,8 +48,10 @@ function App() {
   const generateNewArray = () => {
     const a = []
     for(let i = 0 ; i < LENGTH_OF_ARRAY ; i++){
-      a.push(getRandom(60,300));
+      let r = getRandom(Math.floor(window.innerHeight/10),Math.floor(window.innerHeight/6))
+      a.push(r);
     }
+    console.log(window.innerWidth)
     setArray(a);
     updateArrayBarsColor();
     updateAlgoLogic("");
@@ -45,8 +61,8 @@ function App() {
   }
   function updateArrayBarsColor(){
     const Bars = document.getElementsByClassName("app__array__container__bar")
-    for( let i = 0 ; i < array.length ; i++ ){ 
-      Bars[i].style.backgroundColor = 'aqua'
+    for( let i = 0 ; i < array.length ; i++ ){
+        Bars[i].style.backgroundColor = 'aqua'
     }
   }
   const testSortingAlgo = () => {
@@ -165,7 +181,7 @@ function App() {
             <div 
               className="app__array__container__bar" 
               key={idx}
-              style={{height:`${val}px`}}
+              style={{height:`${val}px`, width:`${Math.floor(window.innerWidth/Math.floor(2.5*LENGTH_OF_ARRAY))}px`, border: `${Math.floor(window.innerWidth/(10*LENGTH_OF_ARRAY))}px solid rgb(255, 255, 255)`}}
             >
             </div>
           ))}
