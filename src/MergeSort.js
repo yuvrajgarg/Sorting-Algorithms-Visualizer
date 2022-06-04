@@ -1,8 +1,9 @@
-import {color_update, height_update} from './App.js';
+import {color_update, height_update, enableButtons} from './App.js';
 
 const bar = document.getElementsByClassName("app__array__container__bar")
 export function mergeSort(array){
-    mergeSortHelper(0,array.length-1,array)
+    mergeSortHelper(0,array.length-1,array);
+    enableButtons();
 }
 function mergeSortHelper(low, high, array){
     if(low>=high){ // if we do low>high it will run forever

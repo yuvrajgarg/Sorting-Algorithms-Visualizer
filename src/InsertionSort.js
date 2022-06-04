@@ -1,4 +1,4 @@
-import {color_update, height_update} from './App.js';
+import {color_update, height_update, enableButtons} from './App.js';
 
 const bar = document.getElementsByClassName("app__array__container__bar")
 export function insertionSort(a){
@@ -18,16 +18,14 @@ export function insertionSort(a){
             height_update(bar[i],a[i])
             height_update(bar[i-1],a[i-1]);
 
-            color_update(bar[i],'aqua') 
-            color_update(bar[i-1],'aqua')
+            color_update(bar[i],'green') 
+            color_update(bar[i-1],'green')
 
             i-=1;
         }
-        color_update(bar[j],'aqua')
+        color_update(bar[j],'green')
     }
-    for(let i = 0 ; i <n ; i++){
-        color_update(bar[i],'green')
-    }
+    enableButtons();
 }
 export function insertionSort_simple(a){
     var n = a.length

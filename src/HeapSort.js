@@ -1,4 +1,4 @@
-import {color_update, height_update} from './App.js';
+import {color_update, height_update, enableButtons} from './App.js';
 
 const bar = document.getElementsByClassName("app__array__container__bar")
 export function heapSort_simple(a){
@@ -65,6 +65,7 @@ export function heapSort(a){
     for(let i = 0 ; i < n ; i++){
         a[i] = (sorted_a[i])
     }
+    enableButtons();
 }
 function deleteElem(a){
     let s_idx = 0;

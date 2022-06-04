@@ -1,4 +1,4 @@
-import {color_update, height_update} from './App.js';
+import {color_update, height_update, enableButtons} from './App.js';
 
 const bar = document.getElementsByClassName("app__array__container__bar")
 export function selectionSort(a){
@@ -28,7 +28,7 @@ export function selectionSort(a){
         color_update(bar[min_idx],'aqua')
         color_update(bar[i],'green')
     }
-    // console.log(a);
+    enableButtons();
 }
 export function selectionSort_simple(a){
     var n = a.length

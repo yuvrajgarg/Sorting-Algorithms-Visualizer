@@ -1,10 +1,11 @@
-import {color_update, height_update} from './App.js';
+import {color_update, height_update, enableButtons} from './App.js';
 
 const bar = document.getElementsByClassName("app__array__container__bar")
 export function quickSort(a){
     let low = 0;
     let high = a.length-1;
-    sortAndPartition(a,low,high) 
+    sortAndPartition(a,low,high);
+    enableButtons();
 }
 function sortAndPartition(a, low, high){
     if(low>=high){

@@ -1,4 +1,4 @@
-import {color_update, height_update} from './App.js';
+import {color_update, height_update, enableButtons} from './App.js';
 
 const bar = document.getElementsByClassName("app__array__container__bar")
 export function bubbleSort(a){
@@ -26,6 +26,7 @@ export function bubbleSort(a){
         color_update(bar[n-1-i],'green')
     }
     // console.log(a);
+    enableButtons();
 }
 export function bubbleSort_simple(a){
     var n = a.length
