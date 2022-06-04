@@ -6,8 +6,8 @@ import { insertionSort, insertionSort_simple } from './InsertionSort.js';
 import { selectionSort, selectionSort_simple } from './SelectionSort.js'
 import { quickSort , quickSort_simple } from './QuickSort'
 import { heapSort , heapSort_simple} from './HeapSort'
+import {countSort, countSort_simple} from './CountSort.js'
 import Footer from './Footer.js';
-import { Slider } from '@mui/material';
 
 var sum_delay = 0
 var delay = 2.5;
@@ -16,13 +16,17 @@ var size = 50;
 export function color_update(array__bar,new_color){
   // console.log(array__bar)
   setTimeout(() => {
-      array__bar.style.backgroundColor = new_color;
+      if(array__bar!=undefined){
+        array__bar.style.backgroundColor = new_color;
+      }
     }, sum_delay+=delay)
 }
 export function height_update(array__bar,new_height){
     setTimeout(() => {
+      if(array__bar!=undefined){
         array__bar.style.height = `${new_height}px`;
-      }, sum_delay+=delay)
+      }
+    }, sum_delay+=delay)
 }
 export function enableButtons(){
   setTimeout(() => {
@@ -107,20 +111,19 @@ function App() {
     }
   }
   const testSortingAlgo = () => {
-    alert("Console kholkr dekho!")
+    // alert("Console kholkr dekho!")
     const a = []
     for(let i = 0 ; i < size ; i++){
-      // for(let j = 0 ; j < getRandom(5,80) ; j++){
-        a.push(getRandom(100,450))
-      // }
+        a.push(getRandom(100,500))
     }
-      let inbuiltSorted = a.slice().sort((a,b)=>a-b);
+      let  inbuiltSorted = a.slice().sort((a,b)=>a-b);
       // bubbleSort_simple(a);
       // selectionSort_simple(a);
       // insertionSort_simple(a);
       // quickSort_simple(a);
       // mergeSort_simple(a);
-      heapSort_simple(a);
+      // heapSort_simple(a);
+      countSort_simple(a);
       let myAlgoSorted = a;
       let flag = false;
       for(let i = 0 ; i < size ; i++){
@@ -196,9 +199,22 @@ function App() {
     var s = "<span id='logic_heading'> LOGIC</span>: Merge Sort uses Divide and Conquer Strategy, the array is recursively divided into 2 parts until only 2 elements remain in the smaller array to be considered and those 2 parts are sorted and merged and used ahead to sort the bigger array. <span id = 'blue_text'> Blue</span> denotes the mid point. <span id = 'yellow_text'> Yellow </span> denotes the two elements being compared. <span id = 'green_text'> Green </span> denotes sorted order. More can be read here <a className = 'hyperlink', href = 'https://en.wikipedia.org/wiki/Mergesort', target = '_blank'> MERGE SORT </a>. "
     var time = "<span id='logic_heading'> TIME COMPLEXITY</span>: <span id='time__heading'> Best Time</span>= Ω(NlogN) | <span id='time__heading'> Average Time</span>= Θ(NlogN) | <span id='time__heading'>Worst Time </span>= O(NlogN)";
     var space = "<span id='logic_heading'> SPACE COMPLEXITY</span>: O(N)";
-    updateAlgoLogic(s,time,space);
-    
+    updateAlgoLogic(s,time,space); 
   }
+  const QuickSortClick = () => {
+    if(buttonsDisabled === true){
+      return;
+    }
+    console.log("quicksort")
+    sum_delay = 0
+    disableButtons();
+    quickSort(array);
+    var s = "<span id='logic_heading'> LOGIC</span>: Quick Sort uses Divide and Conquer Strategy, a pivot element is chosen and the array is partitioned such that all the elements less than or equal to the pivot element come before pivot's position and all the elements greater than it come after it. In a similar fashion, recursive calls are made to the left and right of the partitioned array. <span id = 'blue_text'> Blue</span> denotes the pivot element. <span id='red_text'> Red </span> denotes the two elements to be swapped. <span id = 'green_text'> Green </span> denotes the element in the correct sorted position. More can be read here <a className = 'hyperlink', href = 'https://en.wikipedia.org/wiki/Quicksort', target = '_blank'> QUICK SORT </a>."
+    var time = "<span id='logic_heading'> TIME COMPLEXITY</span>: <span id='time__heading'> Best Time</span>= Ω(NlogN) | <span id='time__heading'> Average Time</span>= Θ(NlogN) | <span id='time__heading'>Worst Time </span>= O(N^2)";
+    var space = "<span id='logic_heading'> SPACE COMPLEXITY</span>: O(logN)";
+    updateAlgoLogic(s,time,space); 
+  }
+
   const HeapSortClick = () => {
     if(buttonsDisabled === true){
       return;
@@ -213,19 +229,22 @@ function App() {
     updateAlgoLogic(s,time,space);
     
   }
-  const QuickSortClick = () => {
+  const CountSortClick = () => {
     if(buttonsDisabled === true){
       return;
     }
-    console.log("quicksort")
+    console.log("Count sort")
     sum_delay = 0
-    disableButtons();
-    quickSort(array);
-    var s = "<span id='logic_heading'> LOGIC</span>: Quick Sort uses Divide and Conquer Strategy, a pivot element is chosen and the array is partitioned such that all the elements less than or equal to the pivot element come before pivot's position and all the elements greater than it come after it. In a similar fashion, recursive calls are made to the left and right of the partitioned array. <span id = 'blue_text'> Blue</span> denotes the pivot element. <span id='red_text'> Red </span> denotes the two elements to be swapped. <span id = 'green_text'> Green </span> denotes the element in the correct sorted position. More can be read here <a className = 'hyperlink', href = 'https://en.wikipedia.org/wiki/Quicksort', target = '_blank'> QUICK SORT </a>."
-    var time = "<span id='logic_heading'> TIME COMPLEXITY</span>: <span id='time__heading'> Best Time</span>= Ω(NlogN) | <span id='time__heading'> Average Time</span>= Θ(NlogN) | <span id='time__heading'>Worst Time </span>= O(N^2)";
-    var space = "<span id='logic_heading'> SPACE COMPLEXITY</span>: O(logN)";
+    disableButtons()
+    countSort(array);
+    var s = "<span id='logic_heading'> LOGIC</span>: Count Sort uses frequency array which stores the count of the elements of the array. This frequency array is used in such a way such that the order of the elements is presered. Therefore, count sort is stable sort. It can be used in cases where the variance of the array elements is low. <span id = 'blue_text'> Blue</span> denotes the current element to be positioned at it's correct sorted position. <span id = 'yellow_text'> Yellow </span> denotes the correct sorted position of the element under consideration. <span id = 'green_text'> Green </span> denotes the correct sorted order. More can be read here <a className = 'hyperlink', href = 'https://en.wikipedia.org/wiki/Counting_sort', target = '_blank'> COUNT SORT </a>. "
+    var time = "<span id='logic_heading'> TIME COMPLEXITY</span>: <span id='time__heading'> Best Time</span>= Ω(N+K) | <span id='time__heading'> Average Time</span>= Θ(N+K) | <span id='time__heading'>Worst Time </span>= O(N+K),   where K is the difference between the maximum and minimum element present in the array";
+    var space = "<span id='logic_heading'> SPACE COMPLEXITY</span>: O(K),    where K is the difference between the maximum and minimum element present in the array";
     updateAlgoLogic(s,time,space);
     
+  }
+  const RadixSortClick = () => {
+    return;
   }
   return (
     <div className="app">
@@ -301,10 +320,20 @@ function App() {
                 onClick = {HeapSortClick}
                 disabled = {false}
           >Heap Sort</button>
-          {/* <button 
+          <button
+                className = "app__header__button"
+                onClick = {CountSortClick}
+                disabled = {false}
+          >Count Sort</button>
+          <button
+                className = "app__header__button"
+                onClick = {RadixSortClick}
+                disabled = {false}
+          >Radix Sort</button>
+          <button 
                 className="app__header__button"
                 onClick = {testSortingAlgo}
-          >Test Algo</button> */}
+          >Test Algo</button>
       </div>
       <div className="app__array__container">
           {array.map((val,idx)=>(
