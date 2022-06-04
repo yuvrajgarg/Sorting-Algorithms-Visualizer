@@ -92,10 +92,12 @@ function App() {
     setArray(a);
     enableButtons();
     updateArrayBarsColor();
-    updateAlgoLogic("");
+    updateAlgoLogic("","","");
   }
-  function updateAlgoLogic(s){
+  function updateAlgoLogic(s,time,space){
     document.getElementById("logic").innerHTML = s;
+    document.getElementById("time").innerHTML = time;
+    document.getElementById("space").innerHTML = space;
   }
   function updateArrayBarsColor(){
     const Bars = document.getElementsByClassName("app__array__container__bar")
@@ -150,7 +152,9 @@ function App() {
     disableButtons();
     bubbleSort(array);
     var s = "<span id='logic_heading'> LOGIC</span>:  The array will be divided into 2 parts, unsorted array and sorted array. Sorted array will be formed from right to left. Each time we will start from the left most point and compare 2 adjacent elements A(i) and A(i+1) for i = 0 to n-2 and swap them if A(i) > A(i+1). This way the largest element will reach the end and we will continue the process. <span id = 'yellow_text'> Yellow </span> denotes the elements which are being compared. <span id='red_text'> Red </span> denotes the elements to be swapped. <span id = 'green_text'> Green </span> denotes the element in it's correct sorted position. More can be read here <a className = 'hyperlink', href = 'https://en.wikipedia.org/wiki/Bubblesort', target = '_blank'> BUBBLE SORT </a>."
-    updateAlgoLogic(s);
+    var time = "<span id='logic_heading'> TIME COMPLEXITY</span>: <span id='time__heading'> Best Time</span>= Ω(N) | <span id='time__heading'> Average Time</span>= Θ(N^2) | <span id='time__heading'>Worst Time </span>= O(N^2)";
+    var space = "<span id='logic_heading'> SPACE COMPLEXITY</span>: O(1)";
+    updateAlgoLogic(s,time,space);
     
   }
   const InsertionSortClick = () => {
@@ -162,7 +166,9 @@ function App() {
     disableButtons()
     insertionSort(array); 
     var s = "<span id='logic_heading'> LOGIC</span>: The array will be divided into 2 parts, unsorted array and sorted array. Sorted array will be formed from left to right. Each time we will pick the left most element from the unsorted array and insert it at it's correct position in the unsorted array on it's left by  comparing two adjacent elements A(i) and A(i-1) for i = current index to 0 and swap them if A(i) < A(i-1). This way the element will be inserted at it's correct position and the whole array will be sorted at the end. <span id = 'yellow_text'> Yellow </span> denotes the current element. <span id='red_text'> Red </span> denotes the incorrect position of two elements which are to be swapped. <span id = 'green_text'> Green </span> denotes the element in it's correct sorted position. More can be read here <a className = 'hyperlink', href = 'https://en.wikipedia.org/wiki/Insertionsort', target = '_blank'> INSERTION SORT </a> "
-    updateAlgoLogic(s);
+    var time = "<span id='logic_heading'> TIME COMPLEXITY</span>: <span id='time__heading'> Best Time</span>= Ω(N) | <span id='time__heading'> Average Time</span>= Θ(N^2) | <span id='time__heading'>Worst Time </span>= O(N^2)";
+    var space = "<span id='logic_heading'> SPACE COMPLEXITY</span>: O(1)";
+    updateAlgoLogic(s,time,space);
     
   }
   const SelectionSortClick = () => {
@@ -174,7 +180,9 @@ function App() {
     disableButtons()
     selectionSort(array);
     var s = "<span id='logic_heading'> LOGIC</span>: The array will be divided into 2 parts, unsorted array and sorted array. Sorted array will be formed from left to right. Each time we will find the minimum element of the unsorted array and swap it with the first element of the unsorted array. This way the element will be inserted at it's correct position and the whole array will be sorted in a similar fashion. <span id='red_text'> Red </span> denotes the element to be swapped.  <span id = 'yellow_text'> Yellow </span> denotes the candidates for the minimum element. <span id = 'green_text'> Green </span> denotes the element in its correct sorted position. More can be read here <a className = 'hyperlink', href = 'https://en.wikipedia.org/wiki/Selectionsort', target = '_blank'> SELECTION SORT </a>."
-    updateAlgoLogic(s);
+    var time = "<span id='logic_heading'> TIME COMPLEXITY</span>: <span id='time__heading'> Best Time</span>= Ω(N^2) | <span id='time__heading'> Average Time</span>= Θ(N^2) | <span id='time__heading'>Worst Time </span>= O(N^2)";
+    var space = "<span id='logic_heading'> SPACE COMPLEXITY</span>: O(1)";
+    updateAlgoLogic(s,time,space);
     
   }
   const MergeSortClick = () => {
@@ -186,7 +194,9 @@ function App() {
     disableButtons()
     mergeSort(array);
     var s = "<span id='logic_heading'> LOGIC</span>: Merge Sort uses Divide and Conquer Strategy, the array is recursively divided into 2 parts until only 2 elements remain in the smaller array to be considered and those 2 parts are sorted and merged and used ahead to sort the bigger array. <span id = 'blue_text'> Blue</span> denotes the mid point. <span id = 'yellow_text'> Yellow </span> denotes the two elements being compared. <span id = 'green_text'> Green </span> denotes sorted order. More can be read here <a className = 'hyperlink', href = 'https://en.wikipedia.org/wiki/Mergesort', target = '_blank'> MERGE SORT </a>. "
-    updateAlgoLogic(s);
+    var time = "<span id='logic_heading'> TIME COMPLEXITY</span>: <span id='time__heading'> Best Time</span>= Ω(NlogN) | <span id='time__heading'> Average Time</span>= Θ(NlogN) | <span id='time__heading'>Worst Time </span>= O(NlogN)";
+    var space = "<span id='logic_heading'> SPACE COMPLEXITY</span>: O(N)";
+    updateAlgoLogic(s,time,space);
     
   }
   const HeapSortClick = () => {
@@ -198,7 +208,9 @@ function App() {
     disableButtons()
     heapSort(array);
     var s = "<span id='logic_heading'> LOGIC</span>: Max Heap is made suing array and elements are extracted one by one from top of the heap and pushed at their respective position from the last. <span id = 'yellow_text'> Yellow </span> denotes the element currently getting set at it's position in the heap. <span id='red_text'> Red </span> denotes the elements to be swapped. <span id = 'green_text'> Green </span> denotes the element at theor correct position in the sprted array. More can be read here <a className = 'hyperlink', href = 'https://en.wikipedia.org/wiki/Heapsort', target = '_blank'> HEAP SORT </a>."
-    updateAlgoLogic(s);
+    var time = "<span id='logic_heading'> TIME COMPLEXITY</span>: <span id='time__heading'> Best Time</span>= Ω(NlogN) | <span id='time__heading'> Average Time</span>= Θ(NlogN) | <span id='time__heading'>Worst Time </span>= O(NlogN)";
+    var space = "<span id='logic_heading'> SPACE COMPLEXITY</span>: O(1)";
+    updateAlgoLogic(s,time,space);
     
   }
   const QuickSortClick = () => {
@@ -210,7 +222,9 @@ function App() {
     disableButtons();
     quickSort(array);
     var s = "<span id='logic_heading'> LOGIC</span>: Quick Sort uses Divide and Conquer Strategy, a pivot element is chosen and the array is partitioned such that all the elements less than or equal to the pivot element come before pivot's position and all the elements greater than it come after it. In a similar fashion, recursive calls are made to the left and right of the partitioned array. <span id = 'blue_text'> Blue</span> denotes the pivot element. <span id='red_text'> Red </span> denotes the two elements to be swapped. <span id = 'green_text'> Green </span> denotes the element in the correct sorted position. More can be read here <a className = 'hyperlink', href = 'https://en.wikipedia.org/wiki/Quicksort', target = '_blank'> QUICK SORT </a>."
-    updateAlgoLogic(s);
+    var time = "<span id='logic_heading'> TIME COMPLEXITY</span>: <span id='time__heading'> Best Time</span>= Ω(NlogN) | <span id='time__heading'> Average Time</span>= Θ(NlogN) | <span id='time__heading'>Worst Time </span>= O(N^2)";
+    var space = "<span id='logic_heading'> SPACE COMPLEXITY</span>: O(logN)";
+    updateAlgoLogic(s,time,space);
     
   }
   return (
@@ -303,9 +317,9 @@ function App() {
           ))}
       </div>
       <div id="app__algo__logic">
-        <span id="logic"></span>
-        <span id="time"></span>
-        <span id="space"></span>
+        <div id="logic"></div>
+        <div id="time"></div>
+        <div id="space"></div>
       </div>
       
       <Footer/>
