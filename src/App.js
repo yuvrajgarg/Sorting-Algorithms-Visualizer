@@ -29,11 +29,12 @@ export function enableButtons(){
     document.getElementById('sizeSlider__slider').disabled = false;
     document.getElementById('speedSlider__slider').disabled = false;
     buttonsDisabled = false;
+    var btns = document.getElementsByClassName("app__header__button");
+    for(let i = 0 ; i < btns.length ; i++){
+      btns[i].style.cursor = `pointer`;
+    }
+    document.getElementsByClassName("app__header__generate__button")[0].style.cursor = `pointer`;
   }, sum_delay+= delay)
-  // var btns = document.getElementsByClassName("app__header__button");
-  //   for(let i = 0 ; i < btns.length ; i++){
-  //     btns[i].style.cursor = `pointer`;
-  //   }
 }
 function App() {
   const [array,setArray] = useState([]); 
@@ -135,12 +136,11 @@ function App() {
     document.getElementById('sizeSlider__slider').disabled = true;
     document.getElementById('speedSlider__slider').disabled = true;
     buttonsDisabled = true;
-    // var btns = document.getElementsByClassName("app__header__button");
-    // for(let i = 0 ; i < btns.length ; i++){
-    //   console.log(document.getElementsByClassName("app__header__button")[i]);
-    //   document.getElementsByClassName("app__header__button")[i].style.cursor = `not-allowed`;
-    //   console.log(document.getElementsByClassName("app__header__button")[i]);
-    // }
+    var btns = document.getElementsByClassName("app__header__button");
+    for(let i = 0 ; i < btns.length ; i++){
+      btns[i].style.cursor = `not-allowed`;
+    }
+    document.getElementsByClassName("app__header__generate__button")[0].style.cursor = `not-allowed`;
   }
   
   const BubbleSortClick = () => {
