@@ -6,7 +6,7 @@ import { insertionSort, insertionSort_simple } from './InsertionSort.js';
 import { selectionSort, selectionSort_simple } from './SelectionSort.js'
 import { quickSort , quickSort_simple } from './QuickSort'
 import { heapSort , heapSort_simple} from './HeapSort'
-import {countSort, countSort_simple} from './CountSort.js'
+// import {countSort, countSort_simple} from './CountSort.js'
 import Footer from './Footer.js';
 
 var sum_delay = 0
@@ -122,7 +122,8 @@ function App() {
       // insertionSort_simple(a);
       // quickSort_simple(a);
       // mergeSort_simple(a);
-      // heapSort_simple(a);
+      heapSort(a);
+      console.log(a);
       // countSort_simple(a);
       let myAlgoSorted = a;
       let flag = false;
@@ -223,26 +224,26 @@ function App() {
     sum_delay = 0
     disableButtons()
     heapSort(array);
-    var s = "<span id='logic_heading'> LOGIC</span>: Max Heap is made suing array and elements are extracted one by one from top of the heap and pushed at their respective position from the last. <span id = 'yellow_text'> Yellow </span> denotes the element currently getting set at it's position in the heap. <span id='red_text'> Red </span> denotes the elements to be swapped. <span id = 'green_text'> Green </span> denotes the element at theor correct position in the sprted array. More can be read here <a className = 'hyperlink', href = 'https://en.wikipedia.org/wiki/Heapsort', target = '_blank'> HEAP SORT </a>."
+    var s = "<span id='logic_heading'> LOGIC</span>: Max Heap is created using array and elements are extracted one by one from top of the heap and pushed at their respective position from the last. <span id = 'yellow_text'> Yellow </span> denotes the element currently getting set at it's position in the heap. <span id='red_text'> Red </span> denotes the elements to be swapped. <span id = 'green_text'> Green </span> denotes the element at theor correct position in the sprted array. More can be read here <a className = 'hyperlink', href = 'https://en.wikipedia.org/wiki/Heapsort', target = '_blank'> HEAP SORT </a>."
     var time = "<span id='logic_heading'> TIME COMPLEXITY</span>: <span id='time__heading'> Best Time</span>= Ω(NlogN) | <span id='time__heading'> Average Time</span>= Θ(NlogN) | <span id='time__heading'>Worst Time </span>= O(NlogN)";
     var space = "<span id='logic_heading'> SPACE COMPLEXITY</span>: O(1)";
     updateAlgoLogic(s,time,space);
     
   }
-  const CountSortClick = () => {
-    if(buttonsDisabled === true){
-      return;
-    }
-    console.log("Count sort")
-    sum_delay = 0
-    disableButtons()
-    countSort(array);
-    var s = "<span id='logic_heading'> LOGIC</span>: Count Sort uses frequency array which stores the count of the elements of the array. This frequency array is used in such a way such that the order of the elements is presered. Therefore, count sort is stable sort. It can be used in cases where the variance of the array elements is low. <span id = 'blue_text'> Blue</span> denotes the current element to be positioned at it's correct sorted position. <span id = 'yellow_text'> Yellow </span> denotes the correct sorted position of the element under consideration. <span id = 'green_text'> Green </span> denotes the correct sorted order. More can be read here <a className = 'hyperlink', href = 'https://en.wikipedia.org/wiki/Counting_sort', target = '_blank'> COUNT SORT </a>. "
-    var time = "<span id='logic_heading'> TIME COMPLEXITY</span>: <span id='time__heading'> Best Time</span>= Ω(N+K) | <span id='time__heading'> Average Time</span>= Θ(N+K) | <span id='time__heading'>Worst Time </span>= O(N+K),   where K is the difference between the maximum and minimum element present in the array";
-    var space = "<span id='logic_heading'> SPACE COMPLEXITY</span>: O(K),    where K is the difference between the maximum and minimum element present in the array";
-    updateAlgoLogic(s,time,space);
+  // const CountSortClick = () => {
+  //   if(buttonsDisabled === true){
+  //     return;
+  //   }
+  //   console.log("Count sort")
+  //   sum_delay = 0
+  //   disableButtons()
+  //   countSort(array);
+  //   var s = "<span id='logic_heading'> LOGIC</span>: Count Sort uses frequency array which stores the count of the elements of the array. This frequency array is used in such a way such that the order of the elements is presered. Therefore, count sort is stable sort. It can be used in cases where the variance of the array elements is low. <span id = 'blue_text'> Blue</span> denotes the current element to be positioned at it's correct sorted position. <span id = 'yellow_text'> Yellow </span> denotes the correct sorted position of the element under consideration. <span id = 'green_text'> Green </span> denotes the correct sorted order. More can be read here <a className = 'hyperlink', href = 'https://en.wikipedia.org/wiki/Counting_sort', target = '_blank'> COUNT SORT </a>. "
+  //   var time = "<span id='logic_heading'> TIME COMPLEXITY</span>: <span id='time__heading'> Best Time</span>= Ω(N+K) | <span id='time__heading'> Average Time</span>= Θ(N+K) | <span id='time__heading'>Worst Time </span>= O(N+K),   where K is the difference between the maximum and minimum element present in the array";
+  //   var space = "<span id='logic_heading'> SPACE COMPLEXITY</span>: O(K),    where K is the difference between the maximum and minimum element present in the array";
+  //   updateAlgoLogic(s,time,space);
     
-  }
+  // }
 
   return (
     <div className="app">
@@ -318,11 +319,11 @@ function App() {
                 onClick = {HeapSortClick}
                 disabled = {false}
           >Heap Sort</button>
-          <button
+          {/* <button
                 className = "app__header__button"
                 onClick = {CountSortClick}
                 disabled = {false}
-          >Count Sort</button>
+          >Count Sort</button> */}
           {/* <button 
                 className="app__header__button"
                 onClick = {testSortingAlgo}

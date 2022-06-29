@@ -36,7 +36,7 @@ function heapify_simple(idx, a){
     if(right_child_idx<n && a[right_child_idx]<a[smaller_idx]){
         smaller_idx = right_child_idx
     }
-    if(smaller_idx!==idx){
+    if(smaller_idx!=idx){
         swap_simple(a,idx,smaller_idx)
         heapify_simple(smaller_idx,a)
     }
@@ -44,7 +44,7 @@ function heapify_simple(idx, a){
 function swap_simple(a,low, high){
      let temp = a[low];
     a[low] = a[high];
-    a[high] = temp; 
+    a[high] = temp;
 }
 export function heapSort(a){
     var n = a.length
@@ -63,7 +63,7 @@ export function heapSort(a){
         color_update(document.getElementsByClassName("app__array__container__bar")[n-num],'green')
     }
     for(let i = 0 ; i < n ; i++){
-        a[i] = (sorted_a[i])
+        a[i] = (sorted_a[n-i-1])
     }
     enableButtons();
 }
@@ -73,9 +73,9 @@ function deleteElem(a){
     let l_idx = n-1;
     swap(a,s_idx,l_idx);
     a.pop();
-    if(a.length>1){
+    // if(a.length>1){
         heapify(s_idx,a);
-    }
+    // }
 }
 function heapify(idx, a){
     color_update(bar[idx],'yellow');
@@ -89,7 +89,7 @@ function heapify(idx, a){
     if(right_child_idx<n && a[right_child_idx]>a[larger_idx]){
         larger_idx = right_child_idx
     }
-    if(larger_idx!==idx){
+    if(larger_idx!=idx){
         swap(a,larger_idx,idx)
         heapify(larger_idx,a)
     }
