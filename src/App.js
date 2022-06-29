@@ -123,7 +123,7 @@ function App() {
       // quickSort_simple(a);
       // mergeSort_simple(a);
       // heapSort_simple(a);
-      countSort_simple(a);
+      // countSort_simple(a);
       let myAlgoSorted = a;
       let flag = false;
       for(let i = 0 ; i < size ; i++){
@@ -243,9 +243,7 @@ function App() {
     updateAlgoLogic(s,time,space);
     
   }
-  const RadixSortClick = () => {
-    return;
-  }
+
   return (
     <div className="app">
       <div className = "app__header">
@@ -325,15 +323,10 @@ function App() {
                 onClick = {CountSortClick}
                 disabled = {false}
           >Count Sort</button>
-          <button
-                className = "app__header__button"
-                onClick = {RadixSortClick}
-                disabled = {false}
-          >Radix Sort</button>
-          <button 
+          {/* <button 
                 className="app__header__button"
                 onClick = {testSortingAlgo}
-          >Test Algo</button>
+          >Test Algo</button> */}
       </div>
       <div className="app__array__container">
           {array.map((val,idx)=>(
