@@ -11,6 +11,5 @@ Sorting Algorithms visualized:
 4. Selection Sort
 5. Quick Sort
 6. Heap Sort
-7. Count Sort
 
 Web App - https://yuvrajgarg.github.io/Sorting-Algorithms-Visualizer/
